@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<fieldset>
+      <legend> 학점 확인 프로그램 </legend>
+      <form action="Ex10_request.jsp" method="post">
+         <table>
+            <!-- 1행 -->
+            <tr>
+               <td>이름</td>
+               <td><input type="text" name="name"></td>
+            </tr>
+            <!-- 2행 -->
+            <tr>
+               <td>Java점수</td>
+               <td><input type="text" name="java"></td>
+            </tr>
+            <!-- 3행 -->
+            <tr>
+               <td>Python점수</td>
+               <td><input type="text" name="python"></td>
+            </tr>
+            <!-- 4행 -->
+            <tr>
+               <td>Web점수</td>
+               <td><input type="text" name="web"></td>
+            </tr>
+            <!-- 5행 -->
+            <tr>
+               <td> ML점수</td>
+               <td><input type="text" name="ml"></td>
+            </tr>
+            <tr>
+               <td id="submit" colspan="2"> 
+                  <input type="submit" value="확인하기"> 
+               </td> 
+            </tr>
+         </table>
+      </form>
+   </fieldset>
+
+</body>
+</html>

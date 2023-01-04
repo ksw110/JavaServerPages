@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>내가 원하는 배경색으로 변경!</h1>
+<!-- 데이터 보낼때 조건 : form태그
+	1. name : 보내는 데이터 이름
+	2. action : 데이터를 보낼 주소
+	3. submit : 데이터를 보내는 시점
+	4. method : 데이터를 보내는 방식 -->
+	
+<!-- action : servlet의 url mapping값을 적는다 -->
+	<form action="helloweb" method="get">
+	<input type ="color" name = "color">
+	<!-- value 속성 : 태그의 기본값 지정 
+		placeholder : 태그의 미리보기-->
+	<input type = "submit" value = "변경">
+	
+	</form>
+</body>
+</html>
