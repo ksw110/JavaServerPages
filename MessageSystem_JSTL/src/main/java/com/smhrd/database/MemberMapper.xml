@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.domain.MemberDAO">
+    <insert id="insertMember" parameterType="com.smhrd.domain.MemberVO">
+        insert into membertest values (#{email}, #{pw}, #{tel}, #{address})
+    </insert>
+    
+    <select id="selectMember" resultType="com.smhrd.domain.MemberVO" parameterType="com.smhrd.domain.MemberVO">
+        select * from membertest where email=#{email} and pw=#{pw}
+    </select>
+    
+    <update id="updateMember" parameterType="com.smhrd.domain.MemberVO">
+    	update membertest set pw=#{pw},tel=#{tel},address=#{address} where email=#{email}
+    </update>
+    
+    <select id="selectAll" resultType="com.smhrd.domain.MemberVO">
+        select * from membertest where not(email='admin')
+    </select>
+    
+    <delete id="deleteMember" parameterType="String">
+    	delete from membertest where email=#{email}
+    </delete>
+    
+    <select id="emailCheck" parameterType="String" resultType="boolean">
+    	select CASE WHEN COUNT(*)>0 THEN 1
+    	            ELSE 0
+    	       END RESULT
+    	FROM MEMBERTEST WHERE EMAIL=#{EMAIL}
+    </select>
+</mapper>

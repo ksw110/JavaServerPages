@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.domain.MessageDAO">
+	<insert id="insertMessage" parameterType="com.smhrd.domain.MessageVO">
+        insert into messagetest values (numseq.nextval, #{sendname}, #{receiveemail}, #{message}, sysdate)
+    </insert>
+
+	<select id="selectAll" resultType="com.smhrd.domain.MessageVO" parameterType="String">
+        select * from messagetest where receiveemail=#{a}
+    </select>
+    
+    <delete id="deleteMessage" parameterType="int">
+    	delete from messagetest where num=#{num}
+    </delete>
+    
+    <delete id="deleteMessageAll" parameterType="String">
+    	delete from messagetest where receiveEmail=#{email}
+    </delete>
+</mapper>
